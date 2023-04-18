@@ -9,14 +9,17 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { ButtonModule } from 'primeng/button';
 import { TableModule } from 'primeng/table';
+import { ChartModule } from 'primeng/chart';
 import { PaginaTablaComponent } from './pages/pagina-tabla/pagina-tabla.component';
 import { HttpClientModule } from '@angular/common/http';
+import { PaginaGraficoComponent } from './pages/pagina-grafico/pagina-grafico.component';
 @NgModule({
   declarations: [
     AppComponent,
     InicioComponent,
     LoadingComponent,
-    PaginaTablaComponent
+    PaginaTablaComponent,
+    PaginaGraficoComponent
   ],
   imports: [
     BrowserModule,
@@ -24,7 +27,8 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserAnimationsModule,
     ButtonModule,
     HttpClientModule,
-    TableModule
+    TableModule,
+    ChartModule
   ],
   providers: [],
   bootstrap: [AppComponent]

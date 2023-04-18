@@ -27,4 +27,8 @@ constructor(private ruta: Router ){
     this.ruta.navigate(['tabla']);
   }
 
+  irPaginaGraficos(){
+    this.ruta.navigate(['grafico']);
+  }
+
 }

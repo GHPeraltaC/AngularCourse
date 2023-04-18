@@ -10,6 +10,7 @@ import { EmpleadoService } from 'src/app/services/empleado.service';
 })
 export class PaginaTablaComponent implements OnInit {
   listEmpleado: IDataEmpleado[] = [];
+  columnaTabla: any;
   constructor(private rutas: Router,
               private empleadoService: EmpleadoService){
 
@@ -25,6 +26,23 @@ export class PaginaTablaComponent implements OnInit {
           console.log(error);
         }
     );
+  }
+
+  iniColumnaTabla(){
+    this.columnaTabla = [
+      {
+        field: 'id', header: 'ID'
+      },
+      {
+        field: 'name', header: 'Nombre'
+      },
+      {
+        field: 'salary', header: 'Salario'
+      },
+      {
+        fields: 'age', header: 'Edad'
+      }
+    ]
   }
 
   regresarInicio(){
