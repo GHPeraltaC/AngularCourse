@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { MenuItem } from 'primeng/api';
-import { IDataEmpleado, IEmpleado } from 'src/app/interfaces/empleadosInterface';
+import { IDataEmpleado } from 'src/app/interfaces/empleadosInterface';
 import { EmpleadoService } from 'src/app/services/empleado.service';
 
 @Component({
@@ -61,11 +61,12 @@ export class PaginaTablaComponent implements OnInit {
   inicioMenu(){
     this.listMenu = [
       {
-        label: 'Cliente',
-
+        label: 'Inicio',
+        icon: 'pi pi-fw pi-home',
       },
       {
-        label: 'Empresa'
+        label: 'Tabla',
+        icon: 'pi pi-fw pi-table',
       }
     ];
     this.activeItem = this.listMenu[0];
