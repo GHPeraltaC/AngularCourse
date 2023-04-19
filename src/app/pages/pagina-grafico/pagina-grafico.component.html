@@ -1,54 +1,152 @@
 <div>
+  <h4>Fecha Consulta: 19/04/2023 19:39pm</h4>
+</div>
+<hr>
+<div>
   <h1><i class="pi pi-user" style="font-size: 2rem"></i> CBPERALTA</h1>
 </div>
 <hr>
-<div class="col-3">
-  <div class="text-center">
-    <h1>Solicitudes Por Estado</h1>
+<!--SOLICITUDES POR ESTADO-->
+  <div class="grid">
+    <div class="col-3">
+      <div class="text-center">
+        <h1>Estados</h1>
+      </div>
+      <div class="card flex justify-content-center">
+        <p-chart type="doughnut" [data]="requestStatus" [options]="options"></p-chart>
+      </div>
+      <div class="card">
+        <p-table>
+          <ng-template pTemplate="header">
+            <tr>
+              <th>Color</th>
+              <th>Tipo</th>
+              <th>Cantidad</th>
+              <th>Tiempo</th>
+            </tr>
+            <tr class="text-center">
+              <td> - </td>
+              <td>APR</td>
+              <td>12</td>
+              <td>0h 40m 30s</td>
+            </tr>
+          </ng-template>
+          <ng-template pTemplate="body">
+            <tr>
+              <td>CED</td>
+              <td>RUC</td>
+              <td>PAS</td>
+            </tr>
+          </ng-template>
+        </p-table>
+      </div>
+    </div>
+
+    <!--SOLICITUDES POR CANAL-->
+    <div class="col-3">
+      <div class="text-center">
+        <h1>Canales</h1>
+      </div>
+      <div class="card flex justify-content-center">
+        <p-chart type="doughnut" [data]="requestChannel" [options]="options"></p-chart>
+      </div>
+      <div class="card">
+        <p-table>
+          <ng-template pTemplate="header">
+            <tr>
+              <th>Color</th>
+              <th>Tipo</th>
+              <th>Cantidad</th>
+              <th>Tiempo</th>
+            </tr>
+            <tr class="text-center">
+              <td> - </td>
+              <td>CAC</td>
+              <td>10</td>
+              <td>0h 30m 30s</td>
+            </tr>
+          </ng-template>
+          <ng-template pTemplate="body">
+            <tr>
+              <td>CED</td>
+              <td>RUC</td>
+              <td>PAS</td>
+            </tr>
+          </ng-template>
+        </p-table>
+      </div>
+    </div>
+
+    <!--SOLICITUDES POR METODO DE PAGO-->
+    <div class="col-3">
+      <div class="text-center">
+        <h1>Forma de Pago</h1>
+      </div>
+      <div class="card flex justify-content-center">
+        <p-chart type="doughnut" [data]="requestChannel" [options]="options"></p-chart>
+      </div>
+      <div class="card">
+        <p-table>
+          <ng-template pTemplate="header">
+            <tr>
+              <th>Color</th>
+              <th>Tipo</th>
+              <th>Cantidad</th>
+              <th>Tiempo</th>
+            </tr>
+            <tr class="text-center">
+              <td> - </td>
+              <td>BCOL</td>
+              <td>10</td>
+              <td>0h 30m 30s</td>
+            </tr>
+          </ng-template>
+          <ng-template pTemplate="body">
+            <tr>
+              <td>CED</td>
+              <td>RUC</td>
+              <td>PAS</td>
+            </tr>
+          </ng-template>
+        </p-table>
+      </div>
+    </div>
+
+    <!--SOLICITUDES POR IDENTIFICACION-->
+    <div class="col-3">
+      <div class="text-center">
+        <h1>Identificacion</h1>
+      </div>
+      <div class="card flex justify-content-center">
+        <p-chart type="doughnut" [data]="requestIdentification" [options]="options"></p-chart>
+      </div>
+      <div class="card">
+        <p-table>
+          <ng-template pTemplate="header">
+            <tr>
+              <th>Color</th>
+              <th>Tipo</th>
+              <th>Cantidad</th>
+              <th>Tiempo</th>
+            </tr>
+            <tr class="text-center">
+              <td> - </td>
+              <td>CED</td>
+              <td>10</td>
+              <td>0h 30m 30s</td>
+            </tr>
+          </ng-template>
+          <ng-template pTemplate="body">
+            <tr>
+              <td>CED</td>
+              <td>RUC</td>
+              <td>PAS</td>
+            </tr>
+          </ng-template>
+        </p-table>
+      </div>
+    </div>
+
+    <hr>
+
   </div>
-  <div class="card flex justify-content-center">
-    <p-chart type="doughnut" [data]="data" [options]="options"></p-chart>
-  </div>
-  <div class="card">
-    <p-table>
-      <ng-template pTemplate="header">
-        <tr>
-          <th></th>
-          <th>Tipo</th>
-          <th>Cantidad</th>
-          <th>Tiempo</th>
-        </tr>
-        <tr>
-          <td> - </td>
-          <td>CED</td>
-          <td>12</td>
-          <td>0h 40m 30s</td>
-        </tr>
-      </ng-template>
-      <ng-template pTemplate="body">
-        <tr>
-          <td>CED</td>
-          <td>RUC</td>
-          <td>PAS</td>
-        </tr>
-      </ng-template>
-    </p-table>
-  </div>
-</div>
-<div class="col-3">
-  <div class="card flex justify-content-center">
-    <p-card header="Advanced Card" subheader="Card Subheader" [style]="{ width: '360px' }">
-        <ng-template pTemplate="header">
-            <h1>Title</h1>
-        </ng-template>
-        <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore sed consequuntur error repudiandae numquam deserunt quisquam repellat libero asperiores earum nam nobis, culpa ratione quam perferendis esse, cupiditate neque
-            quas!
-        </p>
-        <ng-template pTemplate="footer">
-            <p-button label="Save" icon="pi pi-check"></p-button>
-            <p-button label="Cancel" icon="pi pi-times" styleClass="p-button-secondary" [style]="{ 'margin-left': '.5em' }"></p-button>
-        </ng-template>
-    </p-card>
-</div>
-</div>
