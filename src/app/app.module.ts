@@ -9,6 +9,8 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { ButtonModule } from 'primeng/button';
 import { TableModule } from 'primeng/table';
+import { PanelModule } from 'primeng/panel';
+import { TabMenuModule } from 'primeng/tabmenu';
 import { CardModule } from 'primeng/card';
 import { ChartModule } from 'primeng/chart';
 import { PaginaTablaComponent } from './pages/pagina-tabla/pagina-tabla.component';
@@ -30,7 +32,9 @@ import { PaginaGraficoComponent } from './pages/pagina-grafico/pagina-grafico.co
     HttpClientModule,
     TableModule,
     ChartModule,
-    CardModule
+    CardModule,
+    PanelModule,
+    TabMenuModule
   ],
   providers: [],
   bootstrap: [AppComponent]
