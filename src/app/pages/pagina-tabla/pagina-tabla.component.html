@@ -5,8 +5,8 @@
     <div class="flex justify-content-center flex-wrap card-container">
         <p-panel header="Lista de Empleados">
             <p-table [columns]="columnaTabla" [value]="listEmpleado" [tableStyle]="{ 'min-width': '50rem' }"
-                [paginator]="true" [rows]="10" [showCurrentPageReport]="true" currentPageReportTemplate="Mostrando {first} a {last} de {totalRecords} registros"
-                [rowsPerPageOptions]="[10, 25, 50]">
+                [paginator]="true" [rows]="5" [showCurrentPageReport]="true" currentPageReportTemplate="Mostrando {first} a {last} de {totalRecords} registros"
+                [rowsPerPageOptions]="[5, 10, 25]">
                 <ng-template pTemplate="header" let-cols>
                     <tr>
                         <th *ngFor="let col of cols">

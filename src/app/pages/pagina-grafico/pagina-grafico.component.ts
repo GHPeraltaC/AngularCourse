@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-pagina-grafico',
@@ -14,6 +15,9 @@ export class PaginaGraficoComponent {
   requestIdentification: any;
 
   options: any;
+
+  constructor(private rutas: Router){
+  }
 
   ngOnInit(){
 
@@ -74,6 +78,10 @@ export class PaginaGraficoComponent {
             }
           ]
         };
+  }
+
+  regresarInicio(){
+    this.rutas.navigate(['inicio']);
   }
 
 }
