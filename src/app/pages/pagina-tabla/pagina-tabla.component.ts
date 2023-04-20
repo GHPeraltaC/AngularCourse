@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { MenuItem } from 'primeng/api';
 import { IDataEmpleado } from 'src/app/interfaces/empleadosInterface';
 import { EmpleadoService } from 'src/app/services/empleado.service';
+import { MessageService } from 'primeng/api';
 
 @Component({
   selector: 'app-pagina-tabla',
@@ -16,13 +17,13 @@ export class PaginaTablaComponent implements OnInit {
   activeItem!: MenuItem;
 
   constructor(private rutas: Router,
-              private empleadoService: EmpleadoService){
+              private empleadoService: EmpleadoService,
+              private mensajes: MessageService){
 
   }
 
   ngOnInit(): void {
     this.iniColumnaTabla();
-    this.inicioMenu();
 
     console.log('Hola estoy aqui desde ngOninit');
 
@@ -30,9 +31,11 @@ export class PaginaTablaComponent implements OnInit {
       next: (datos) => {
         console.log(datos);
         this.listEmpleado = datos.data;
+        this.mensajes.add({ severity: 'success', summary: 'Satisfactorio', detail: 'Consulta Exitosa'})
       },
       error: (err) => {
         console.log(err);
+        this.mensajes.add({ severity: 'error', summary: 'Error', detail: 'Hubo un problema'})
       }
     });
   }
@@ -56,20 +59,6 @@ export class PaginaTablaComponent implements OnInit {
 
   regresarInicio(){
     this.rutas.navigate(['inicio']);
-  }
-
-  inicioMenu(){
-    this.listMenu = [
-      {
-        label: 'Inicio',
-        icon: 'pi pi-fw pi-home',
-      },
-      {
-        label: 'Tabla',
-        icon: 'pi pi-fw pi-table',
-      }
-    ];
-    this.activeItem = this.listMenu[0];
   }
 
 }

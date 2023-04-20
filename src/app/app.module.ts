@@ -10,19 +10,26 @@ import { AppRoutingModule } from './app-routing.module';
 import { ButtonModule } from 'primeng/button';
 import { TableModule } from 'primeng/table';
 import { MenubarModule } from 'primeng/menubar';
+import { ToastModule } from 'primeng/toast';
 import { PanelModule } from 'primeng/panel';
 import { CardModule } from 'primeng/card';
 import { ChartModule } from 'primeng/chart';
 import { PaginaTablaComponent } from './pages/pagina-tabla/pagina-tabla.component';
 import { HttpClientModule } from '@angular/common/http';
 import { PaginaGraficoComponent } from './pages/pagina-grafico/pagina-grafico.component';
+import { MenuHeaderComponent } from './components/menu-header/menu-header.component';
+import { MessageService } from 'primeng/api';
+
+
+
 @NgModule({
   declarations: [
     AppComponent,
     InicioComponent,
     LoadingComponent,
     PaginaTablaComponent,
-    PaginaGraficoComponent
+    PaginaGraficoComponent,
+    MenuHeaderComponent
   ],
   imports: [
     BrowserModule,
@@ -34,9 +41,10 @@ import { PaginaGraficoComponent } from './pages/pagina-grafico/pagina-grafico.co
     ChartModule,
     CardModule,
     PanelModule,
-    MenubarModule
+    MenubarModule,
+    ToastModule
   ],
-  providers: [],
+  providers: [MessageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
