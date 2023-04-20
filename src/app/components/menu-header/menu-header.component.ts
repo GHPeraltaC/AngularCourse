@@ -31,6 +31,11 @@ export class MenuHeaderComponent implements OnInit{
         label: 'Grafico',
         routerLink: '/grafico',
         icon: 'pi pi-spin pi-cog'
+      },
+      {
+        label: 'Transaccionalidad',
+        routerLink: '/transactionality',
+        icon: 'pi pi-user'
       }
     ];
   }

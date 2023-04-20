@@ -19,6 +19,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { PaginaGraficoComponent } from './pages/pagina-grafico/pagina-grafico.component';
 import { MenuHeaderComponent } from './components/menu-header/menu-header.component';
 import { MessageService } from 'primeng/api';
+import { PageTransactionalityComponent } from './pages/page-transactionality/page-transactionality.component';
 
 
 
@@ -29,7 +30,8 @@ import { MessageService } from 'primeng/api';
     LoadingComponent,
     PaginaTablaComponent,
     PaginaGraficoComponent,
-    MenuHeaderComponent
+    MenuHeaderComponent,
+    PageTransactionalityComponent
   ],
   imports: [
     BrowserModule,
