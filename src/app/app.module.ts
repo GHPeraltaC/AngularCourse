@@ -14,12 +14,15 @@ import { ToastModule } from 'primeng/toast';
 import { PanelModule } from 'primeng/panel';
 import { CardModule } from 'primeng/card';
 import { ChartModule } from 'primeng/chart';
+import { InputTextModule } from 'primeng/inputtext';
+
 import { PaginaTablaComponent } from './pages/pagina-tabla/pagina-tabla.component';
 import { HttpClientModule } from '@angular/common/http';
 import { PaginaGraficoComponent } from './pages/pagina-grafico/pagina-grafico.component';
 import { MenuHeaderComponent } from './components/menu-header/menu-header.component';
 import { MessageService } from 'primeng/api';
 import { PageTransactionalityComponent } from './pages/page-transactionality/page-transactionality.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -44,7 +47,9 @@ import { PageTransactionalityComponent } from './pages/page-transactionality/pag
     CardModule,
     PanelModule,
     MenubarModule,
-    ToastModule
+    ToastModule,
+    InputTextModule,
+    ReactiveFormsModule
   ],
   providers: [MessageService],
   bootstrap: [AppComponent]

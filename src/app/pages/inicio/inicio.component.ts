@@ -1,18 +1,25 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { MessageService } from 'primeng/api';
 import { ButtonModule } from 'primeng/button';
 @Component({
   selector: 'app-inicio',
   templateUrl: './inicio.component.html',
   styleUrls: ['./inicio.component.css']
 })
-export class InicioComponent {
+export class InicioComponent implements OnInit{
 nombre = 'Cristhofer';
 apellido = 'Peralta';
 loadingVisible = false;
+formUsuario!: FormGroup;
 
-constructor(private ruta: Router ){
+constructor(private ruta: Router ,
+  private mensajes: MessageService){
+}
 
+ngOnInit(): void {
+  this.buildFormulario();
 }
 
   visualizarLoading(){
@@ -21,6 +28,24 @@ constructor(private ruta: Router ){
     setTimeout(() => {
       this.loadingVisible = false;
     }, 2000);
+  }
+
+  buildFormulario(){
+    this.formUsuario = new FormGroup(
+      {
+        nombre: new FormControl('', [Validators.required]),
+        apellido: new FormControl('', [Validators.required])
+      }
+    );
+  }
+
+  verificar(){
+    console.log(this.formUsuario);
+    if (this.formUsuario.valid){
+      this.mensajes.add({ severity: 'success', summary: 'Formulario Correcto', detail: 'Exito'})
+    } else {
+      this.mensajes.add({ severity: 'error', summary: 'Formulario Incorrecto', detail: 'Llene todos los campos.'})
+    }
   }
 
   irPaginaTabla(){
