@@ -3,29 +3,40 @@
   <h1 class="h1"> {{nombre + ' ' + apellido}} </h1>
   <app-loading [visible]="loadingVisible"></app-loading>
 
-  <p-panel header="Formulario">
-    <form [formGroup]="formUsuario" class="formgrid grid">
-        <div class="field col-12 md:col-6">
+  <p-panel header="Formulario Empleado">
+    <form [formGroup]="formEmpleado" class="formgrid grid">
+        <div class="field col-12 md:col-4">
             <label for="name">Nombre</label>
-            <input id="name" type="text" pInputText formControlName="nombre"
+            <input id="name" type="text" pInputText formControlName="name"
                      class="text-base text-color surface-overlay
                             p-2 border-1 border-solid
                             border-round appearance-none outline-none
                             focus:border-primary w-full"/>
-            <div *ngIf="(formUsuario.get('nombre')!.dirty || formUsuario.get('nombre')!.touched)">
-              <small *ngIf="formUsuario.get('nombre')!.hasError('required')" id="name-help" class="p-error">Nombre requerido.</small>
+            <div *ngIf="(formEmpleado.get('name')!.dirty || formEmpleado.get('name')!.touched)">
+              <small *ngIf="formEmpleado.get('name')!.hasError('required')" id="name-help" class="p-error">Nombre requerido.</small>
             </div>
         </div>
-        <div class="field col-12 md:col-6">
+        <div class="field col-12 md:col-4">
             <label for="apellido">Apellido</label>
             <input id="apellido" type="text" pInputText formControlName="apellido"
                      class="text-base text-color surface-overlay
                             p-2 border-1 border-solid
                             border-round appearance-none outline-none
                             focus:border-primary w-full"/>
-            <div *ngIf="(formUsuario.get('apellido')!.dirty || formUsuario.get('apellido')!.touched)">
-               <small *ngIf="formUsuario.get('apellido')!.hasError('required')" id="apellido-help" class="p-error">Apellido requerido.</small>
+            <div *ngIf="(formEmpleado.get('apellido')!.dirty || formEmpleado.get('apellido')!.touched)">
+               <small *ngIf="formEmpleado.get('apellido')!.hasError('required')" id="apellido-help" class="p-error">Apellido requerido.</small>
             </div>
+        </div>
+        <div class="field col-12 md:col-4">
+          <label for="age">Edad</label>
+          <input id="age" type="text" pInputText formControlName="age"
+                   class="text-base text-color surface-overlay
+                          p-2 border-1 border-solid
+                          border-round appearance-none outline-none
+                          focus:border-primary w-full"/>
+          <div *ngIf="(formEmpleado.get('age')!.dirty || formEmpleado.get('age')!.touched)">
+             <small *ngIf="formEmpleado.get('age')!.hasError('required')" id="age-help" class="p-error">Apellido requerido.</small>
+          </div>
         </div>
         <div class="col-12 ">
           <p-button label="Verificar" (onClick)="verificar()"></p-button>

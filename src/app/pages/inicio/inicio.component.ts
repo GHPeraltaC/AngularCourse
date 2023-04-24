@@ -12,7 +12,7 @@ export class InicioComponent implements OnInit{
 nombre = 'Cristhofer';
 apellido = 'Peralta';
 loadingVisible = false;
-formUsuario!: FormGroup;
+formEmpleado!: FormGroup;
 
 constructor(private ruta: Router ,
   private mensajes: MessageService){
@@ -31,17 +31,18 @@ ngOnInit(): void {
   }
 
   buildFormulario(){
-    this.formUsuario = new FormGroup(
+    this.formEmpleado = new FormGroup(
       {
-        nombre: new FormControl('', [Validators.required]),
-        apellido: new FormControl('', [Validators.required])
+        name: new FormControl('', [Validators.required]),
+        salary: new FormControl('', [Validators.required]),
+        age: new FormControl('', [Validators.required])
       }
     );
   }
 
   verificar(){
-    console.log(this.formUsuario);
-    if (this.formUsuario.valid){
+    console.log(this.formEmpleado);
+    if (this.formEmpleado.valid){
       this.mensajes.add({ severity: 'success', summary: 'Formulario Correcto', detail: 'Exito'})
     } else {
       this.mensajes.add({ severity: 'error', summary: 'Formulario Incorrecto', detail: 'Llene todos los campos.'})
